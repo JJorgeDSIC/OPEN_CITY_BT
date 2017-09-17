@@ -264,111 +264,6 @@ CITY.OpenCity = function(parameters){
 			alphaTest: 0.8, 
 			side: THREE.DoubleSide 
 		} );
-/*
-	var cloudPlaneGeometry = new CITY.CloudBufferGeometry();
-
-	cloudPlaneGeometry.create(this.width * 2 + 20, 0, this.depth * 2 + 20, xPlane - 20, yPlane, zPlane - 20);
-
-	//console.log("Triangles: %f, Cubes: %s\n", cubes * 10, cubes);
-
-	var cloudPlaneMesh = new THREE.Mesh( cloudPlaneGeometry, billboardMaterial );
-
-	cloudPlaneMesh.position.y = 200;
-
-
-	cloudPlaneMesh.receiveShadow = false;
-
-	scene.add( cloudPlaneMesh );
-*/
-
-/*
-	var geometry = new THREE.Geometry();
-
-	var texture = THREE.ImageUtils.loadTexture( 'images/cloud10.png', null );
-	texture.magFilter = THREE.LinearMipMapLinearFilter;
-	texture.minFilter = THREE.LinearMipMapLinearFilter;
-
-	var fog = new THREE.Fog( 0x4584b4, - 100, 3000 );
-
-	material = new THREE.ShaderMaterial( {
-
-		uniforms: {
-
-			"map": { type: "t", value: texture },
-			"fogColor" : { type: "c", value: fog.color },
-			"fogNear" : { type: "f", value: fog.near },
-			"fogFar" : { type: "f", value: fog.far },
-
-		},
-		vertexShader: document.getElementById( 'vs' ).textContent,
-		fragmentShader: document.getElementById( 'fs' ).textContent,
-		depthWrite: false,
-		depthTest: true,
-		transparent: true
-
-	} );
-
-	var plane = new THREE.Mesh( new THREE.PlaneGeometry( 64, 64 ) );
-
-	for ( var i = 0; i < 1000; i++ ) {
-
-		plane.position.x = Math.random() * this.width - 500;//500
-		plane.position.y =  Math.random() * Math.random() * this.depth - 0;//200
-		plane.position.z = 400 + THREE.Math.randInt(10,30);
-		//plane.rotation.z = Math.random() * Math.PI * 2;
-
-		plane.scale.x = plane.scale.y = Math.random() * Math.random() * 1.5 + 0.5;
-
-		THREE.GeometryUtils.merge( geometry, plane );
-
-	}
-
-
-
-	mesh = new THREE.Mesh( geometry, material );
-	mesh.rotation.x = 90 *  Math.PI/180 ;
-	mesh.position.x = this.width/2;
-	mesh.position.y = 400;
-	//mesh.position.z = this.depth/2 ;
-	scene.add( mesh );
-
-	mesh = new THREE.Mesh( geometry, material );
-	mesh.position.z = - 8000;
-	scene.add( mesh );
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 
 
 };
@@ -460,33 +355,6 @@ CITY.OpenCity.prototype.setUpCollisions = function(collidableMesh){
 
 CITY.OpenCity.prototype.setUpInteraction = function(scene, width, depth, x, y, z, renderer){
 
-	/*
-	* Interaction: Fly camera and FPS camera configuration
-	*/
-
-	
-	/*
-	<div id="blocker">
-		<div id="instructions">
-			<span style="font-size: 40px">Click to play</span> <br />(W, A, S, D
-			= Move, SPACE = Jump, MOUSE = Look around)
-		</div>
-	</div>
-
-	*/
-	/*
-	var node = document.createElement("div");
-
-	node.innerHTML="<div id="blocker">
-				<div id="instructions">
-					<span style="font-size: 40px">Click to play</span> <br />(W, A, S, D
-					= Move, SPACE = Jump, MOUSE = Look around)
-					</div>
-				</div>";
-	*/
-	//console.log("Third renderer");
-	//console.log(renderer.domElement);
-
 	this.blocker = document.getElementById('blocker');
 	this.instructions = document.getElementById('instructions');//document.getElementById('instructions');
 	
@@ -528,38 +396,9 @@ CITY.OpenCity.prototype.setUpInteraction = function(scene, width, depth, x, y, z
 	this.enableControls(this.blocker, this.instructions, this.fpsControls);
 	this.fpsControls.getObject().rotation.y = (45 * Math.PI/2);
 
-	// SKYDOME
-	/*
-	var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0 );
-	hemiLight.color.setHSL( 0.6, 1, 0.6 );
-	hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
-	hemiLight.position.set( 0, 500, 0 );
-	scene.add( hemiLight );
-
-	var vertexShader = document.getElementById( 'vertexShader' ).textContent;
-	var fragmentShader = document.getElementById( 'fragmentShader' ).textContent;
-	var uniforms = {
-		topColor: 	 { type: "c", value: new THREE.Color( 0x0077ff ) },
-		bottomColor: { type: "c", value: new THREE.Color( 0xffffff ) },
-		offset:		 { type: "f", value: 400 },
-		exponent:	 { type: "f", value: 0.6 }
-	}
-	uniforms.topColor.value.copy( hemiLight.color );
-
-	//scene.fog.color.copy( uniforms.bottomColor.value );
-
-	var skyMat = new THREE.ShaderMaterial( { vertexShader: vertexShader, fragmentShader: fragmentShader, uniforms: uniforms, side: THREE.BackSide } );
-
-	var skyGeo = new THREE.SphereGeometry( 1000, 32, 15 );
-	sky = new THREE.Mesh( skyGeo, skyMat );
-	scene.add( sky );
-*/
 };
 
 var sky;
-
-
-//ADAPTAR PARA ESPECIFICAR UNOS PARÁMETROS POR DEFECTO
 
 CITY.OpenCity.prototype.update = function(delta, vv){
 

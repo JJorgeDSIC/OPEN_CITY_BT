@@ -4,7 +4,6 @@
 
 var CITY = { REVISION: '11' };
 
-
 ////////////// Constant declaration ////////////////////////////////////
 self.console = self.console || {
 
@@ -599,121 +598,9 @@ CITY.grassMaterial = new THREE.MeshLambertMaterial( {
 } );
 
 
-
-
-
-
 /*
 * Texture from Mr.Doob experiment
 */
 
 CITY.cloud = THREE.ImageUtils.loadTexture( 'images/cloud10.png' );
 CITY.block = THREE.ImageUtils.loadTexture( 'images/block.png' );
-
-/*
-////////////// Textures declaration ////////////////////////////////////
-
-CITY.residencialBuildingTexture  = THREE.ImageUtils.loadTexture( "images/Residencial_tileable.png" );
-CITY.residencialBuildingTexture.wrapS = CITY.residencialBuildingTexture.wrapT = THREE.RepeatWrapping;
-//roadTexture.repeat.set( 150, 150 );
-
-CITY.officeBuildingTexture  = THREE.ImageUtils.loadTexture( "images/office_wall_textures/office_building_1.png" );
-CITY.officeBuildingTexture.wrapS = CITY.officeBuildingTexture.wrapT = THREE.RepeatWrapping;
-
-CITY.firstFloorTextures  = THREE.ImageUtils.loadTexture( "images/roofTexture.png" );//checkerboard.jpg
-CITY.roofTexture.wrapS = CITY.roofTexture.wrapT = THREE.RepeatWrapping;
-
-CITY.parkTexture  = THREE.ImageUtils.loadTexture( "images/cesped.jpg" );
-CITY.parkTexture.wrapS = CITY.parkTexture.wrapT = THREE.RepeatWrapping;
-
-CITY.tree1 = THREE.ImageUtils.loadTexture( 'images/CutoutTree_Vol.01_01_MIN.png' );
-CITY.tree2 = THREE.ImageUtils.loadTexture( 'images/Tree2.png' );
-CITY.tree3 = THREE.ImageUtils.loadTexture( 'images/Tree3.png' );
-
-/*
-* Texture from Mr.Doob experiment
-*/
-/*
-CITY.cloud = THREE.ImageUtils.loadTexture( 'images/cloud10.png' );
-
-
-////////////// Materials declaration ////////////////////////////////////
-
-
-CITY.residencialBuildingMaterial = new THREE.MeshLambertMaterial( {
-			color: 0xaaaaaa, 
-			//side: THREE.DoubleSide,
-			side: THREE.FrontSide,
-			//transparent: true,
-			//overdraw:true 
-			map: CITY.residencialBuildingTexture 
-	} );
-
-CITY.residencialRoofMaterial = new THREE.MeshLambertMaterial( {
-		color: 0xaaaaaa, 
-		//side: THREE.DoubleSide, 
-		side: THREE.FrontSide, 
-		map: CITY.roofTexture 
-} );
-
-
-
-CITY.officeBuildingMaterial = new THREE.MeshLambertMaterial( {
-			color: 0xaaaaaa, 
-			//side: THREE.DoubleSide, 
-			side: THREE.FrontSide, 
-			map: CITY.officeBuildingTexture 
-	} );
-
-
-CITY.officeRoofMaterial = new THREE.MeshLambertMaterial( {
-		color: 0xaaaaaa, 
-		//side: THREE.DoubleSide, 
-		side: THREE.FrontSide, 
-		map: CITY.roofTexture 
-} );
-
-
-CITY.parkMaterial = new THREE.MeshLambertMaterial( {
-		color: 0xaaaaaa, 
-		//side: THREE.DoubleSide, 
-		side: THREE.FrontSide, 
-		map: CITY.roofTexture 
-} );
-
-
-CITY.testTexture  = THREE.ImageUtils.loadTexture( "images/texture.png" );
-CITY.testTexture.wrapS = CITY.testTexture.wrapT = THREE.RepeatWrapping;
-//roadTexture.repeat.set( 150, 150 );
-
-CITY.testMaterial = new THREE.MeshLambertMaterial( {
-		color: 0xaaaaaa, 
-		side: THREE.FrontSide,
-		//side: THREE.DoubleSide, 
-		map: CITY.testTexture 
-} );
-
-//CITY.testCheckBoardTexture  = THREE.ImageUtils.loadTexture( "images/checkerboard.jpg" );
-CITY.testCheckBoardTexture  = THREE.ImageUtils.loadTexture( "images/roof.png" );
-CITY.testCheckBoardTexture.wrapS = CITY.testCheckBoardTexture.wrapT = THREE.RepeatWrapping;
-//roadTexture.repeat.set( 150, 150 );
-
-CITY.testCheckBoardMaterial = new THREE.MeshLambertMaterial( {
-		color: 0xaaaaaa, 
-		side: THREE.FrontSide, 
-		//side: THREE.DoubleSide, 
-		map: CITY.testCheckBoardTexture 
-} );
-
-
-//Phong
-
-CITY.BumpTestmaterial = new THREE.MeshPhongMaterial( { ambient: 0xffffff,
- color: 0x552811,
- specular: 0x333333,
- shininess: 2 * 25,
- bumpMap: CITY.officeBuildingTexture ,
- bumpScale: 19,
- metal: false } 
- );
-*/
