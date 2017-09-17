@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+   <title>City</title>
+      <meta charset="utf-8">
+
+     <!--<script src="js/vendor/three.js/Three.js"></script> -->
+
+      <!--Three JS -->
+      <script src="js/vendor/three.js/three.min.js"></script>
+      <script src="js/vendor/three.js/Detector.js"></script>
+      <script src="js/vendor/three.js/Stats.js"></script>
+      <script src="js/vendor/three.js/BufferGeometryUtils.js"></script>
+      <!--Three JS -->
+
+   
+      <!-- <script src="js/vendor/threex/THREEx.screenshot.js"></script>-->
+      <!-- <script src="js/vendor/threex/THREEx.FullScreen.js"></script>-->
+      <!-- <script src="js/vendor/threex/THREEx.WindowResize.js"></script>-->
+      <!-- <script src="js/vendor/threex.dragpancontrols.js"></script>-->
+         
+      <!-- Temporal, this will be fixed -->
+      <script src="js/vendor/controls/FirstPersonControls.js"></script>
+      <script src="js/vendor/controls/PointerLockControls.js"></script>
+      <script src="js/vendor/controls/TrackballControls.js"></script>
+
+      <!--GPCJS -->
+      <script src='js/vendor/gpc/gpc.js'></script>
+
+      <!--GUI -->
+      <script src='js/vendor/controls/dat.gui.min.js'></script>
+
+
+      <!--OpenCity -->
+      <script src="js/main.js"></script>
+      <script src="js/OpenCity.js"></script>
+      <script src="js/models/City.js"></script>
+      <script src="js/models/BoxBufferGeometry.js"></script>
+      <script src="js/models/PlaneBufferGeometry.js"></script>
+      <script src="js/models/CloudBufferGeometry.js"></script>
+      <script src="js/models/Billboard.js"></script>
+      <script src="js/utils/Layout.js"></script>
+      <script src="js/utils/PolygonUtils.js"></script>
+      <script src="js/utils/GeometryUtils.js"></script>
+      <script src="js/utils/CollisionDetector.js"></script>
+
+    
+
+
+
+      <script type="x-shader/x-vertex" id="vertexShader">
+
+         varying vec3 vWorldPosition;
+
+         void main() {
+
+            vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+            vWorldPosition = worldPosition.xyz;
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+         }
+
+      </script>
+
+      <script type="x-shader/x-fragment" id="fragmentShader">
+
+         uniform vec3 topColor;
+         uniform vec3 bottomColor;
+         uniform float offset;
+         uniform float exponent;
+
+         varying vec3 vWorldPosition;
+
+         void main() {
+
+            float h = normalize( vWorldPosition + offset ).y;
+            gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( abs(h), exponent ), 0.0 ) ), 1.0 );
+
+         }
+
+      </script>
+
+
+      
+		<style type="text/css">
+			
+		</style>		
+		
+   </head>
+   <body  style="background-image:url(images/Logo2Intuye.png)">
+
+   <!-- three.js container -->
+       <div id="container"></div>
+      
+
+     <div id="blocker" >
+         <div id="instructions" >
+            <span style="font-size: 40px">Haz click en esta zona para entrar en vista de calle.</span> <br />Desplazamientos con las flechas y movimiento de la cabeza con el mouse.
+         </div>
+      </div>
+
+      
+   </body>
+	
+	
+	
+   
+</html>
+
+   
+   
