@@ -19,6 +19,6 @@ For that reason, a theoretical and practical framework to deal with this problem
 
 ### Demo
 
-[![Open City](https://img.youtube.com/vi/https://youtu.be/Pj1Hdrx9Rec/2.jpg)](https://www.youtube.com/watch?v=https://youtu.be/Pj1Hdrx9Rec "Open City")
+[![Open City](https://img.youtube.com/vi/Pj1Hdrx9Rec/2.jpg)](https://www.youtube.com/watch?v=Pj1Hdrx9Rec "Open City")
 
 
