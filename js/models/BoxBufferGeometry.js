@@ -1,5 +1,5 @@
 // Custom BoxBufferGeometry class
-
+//This class extends the BufferGeometry class that provides methods to use buffers to store geomerties.
 CITY.BoxBufferGeometry = function(){
 
 	THREE.BufferGeometry.call(this);

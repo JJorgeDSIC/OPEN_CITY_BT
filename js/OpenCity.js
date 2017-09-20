@@ -2,6 +2,8 @@
  * @author Javier JC
  */
 
+
+//constants, textures config, and so on...
 var CITY = { REVISION: '11' };
 
 ////////////// Constant declaration ////////////////////////////////////

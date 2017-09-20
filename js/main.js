@@ -21,6 +21,9 @@ window.onload = function() {
 
 	var camera, trackBallCamera, controls;
 
+	alert("Set your params or left them by default and click on 'create'");
+	alert("Push Q to start, A,S,D,W and SHIFT provide movement, pushing C changes to one camera to the other and O shows the whole map")
+
 
 
 var FizzyText = function() {
@@ -313,6 +316,11 @@ var manipulation = function(){
 		//gui.add(text, 'displayOutline');
 		//gui.add(text, 'explode');
 	
+		//gui.add(text, 'Push GENERATE (bottom) to create a new city');
+		//gui.add(text, 'Push Key Q to start fliying around');
+		//gui.add(text, 'Push Key C to start toggle camera: movement a,w,s,d and shift for running');
+		//gui.add(text, 'N -> Toggle night, O -> show the map');
+
 		gui.add( manipulationInstance, 'width', 0, 5000 );
 		gui.add( manipulationInstance, 'depth', 0, 5000 );
 		gui.add( manipulationInstance, 'streetAnchorField').min(5).step(1);
@@ -436,4 +444,3 @@ var manipulation = function(){
 	
 	
 };
-

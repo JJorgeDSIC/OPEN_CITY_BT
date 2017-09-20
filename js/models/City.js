@@ -1,7 +1,6 @@
 
 // Custom OpenCity class
 
-
 var collidableMesh = [];
 var pointsLights = [];
 
@@ -58,6 +57,7 @@ CITY.OpenCity = function(parameters){
 
 	var time = Date.now();
 	/*
+	Default params
 	var parameters = {
 		streetAnchor: 10,
 		avenueAnchor: 30,
@@ -101,19 +101,7 @@ CITY.OpenCity = function(parameters){
    for(var i = 0; i < districts.getNumInnerPoly(); i++){
 
    	   var poly = districts.getInnerPoly(i);
-   	   //console.log("DISTRICT");
-   	   //console.log(poly);
-
-
-   	   /*
-			blockStreetAnchor: manipulationInstance.blockStreetAnchor,//5,
-			blockAvenueAnchor: manipulationInstance.blockAvenueAnchor,//5,
-			blockNumAvenues: manipulationInstance.blockNumAvenues,//2,
-			blockRadial: (manipulationInstance.blockRadial !== 0)? false: true,//true,
-			blockPurgeArea: manipulationInstance.blockPurgeArea,//200,
-
-
-   	   */
+   	 
 	   drawRoadMap2InitialPoly(
 
 					poly.getBounds().w,
@@ -170,21 +158,6 @@ CITY.OpenCity = function(parameters){
 
 	this.particleLights.push( particles );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	var billboardMaterial = new THREE.MeshBasicMaterial( 
 		{ 	map: CITY.block, 
 			alphaTest: 0.5, 
@@ -198,40 +171,19 @@ CITY.OpenCity = function(parameters){
 
 	var mesh = new THREE.Mesh(collisionCube, billboardMaterial);
 
-	//mesh.position.x = this.posx + this.width/2;
-	//mesh.position.z = this.posz + this.depth/2;
 	console.log(mesh);
 	scene.add(mesh);
-
-	//CITY.BoxBufferGeometry.prototype.create = function(width, height, depth, posx, posy, posz){
-
-	//var collidableMesh = [];
-
-
-	//collidableMesh.push(buildingGroupExtruding);
 
 	collidableMesh.push(mesh);
 
 	scope.setUpCollisions(collidableMesh);
 
 	//Store ref. to scene object
-
    var numBuildings = finalLayout.getNumInnerPoly();
-   //CITY.PolygonUtils.scalePolygon(finalLayout, 0.8, 0.8);
-   //CITY.PolygonUtils.translatePolygon(finalLayout, this.width/2, this.depth/2);
 
    var triangulos = 10 * numBuildings + 8 * numBuildings + 10 * numBuildings;
    var time2 = Date.now();
    var totalTime = (time2 - time)/1000;
-   //alert("Se han generado " +numBuildings+ " edificios, aproximadamente "+ triangulos+ " triangulos. Dimensiones "+this.width+" por "+this.depth+", junto con los elementos decorativos, tiempo: "+totalTime);
-   //Decoration elements
-   /*
-	var tree = new CITY.TreeBillBoard();
-	tree.create(7, 5, 0, 0, 0, CITY.treeTextures[THREE.Math.randInt(0, CITY.numTreeTextures - 1)]);
-
-	scene.add(tree);
-	*/
-
 
 	cubePosis = new THREE.Mesh(new THREE.BoxGeometry(10,10,10));
 
@@ -291,9 +243,6 @@ CITY.OpenCity.prototype.drawGround = function(x,z,width,depth){
 	this.add( planeMesh );
 
 }
-
-
-
 
 CITY.OpenCity.prototype.setUpCollisions = function(collidableMesh){
 

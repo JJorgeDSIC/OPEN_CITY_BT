@@ -1,4 +1,4 @@
-
+//Methods to create objects based on BillBoards: Trees and Lamposts (Clouds TO DO).
 CITY.BillBoard = function (  ){
 
 	THREE.Mesh.call(this);
@@ -32,8 +32,6 @@ CITY.BillBoard.prototype.create = function(width, height, depth, posx, posy, pos
 };
 
 // Custom TreeBillBoard class
-
-
 CITY.ElementBillBoard = function (  ){
 
 	THREE.Object3D.call(this);
@@ -79,12 +77,6 @@ CITY.TreeBillBoard.prototype = new THREE.Object3D();
 
 CITY.TreeBillBoard.prototype.create = function(width, height, elevation, posx, posz, map){
 
-	//Select the texture from the list of tree textures, random?
-
-	//TO DO!!
-
-//	CITY.ElementBillBoard.prototype.create.call(width, height, elevation, posx, posz, map);
-
 	var xz = new CITY.BillBoard();
 
 	xz.create(width, 0, height, 0, 0, 0, map);
@@ -101,11 +93,7 @@ CITY.TreeBillBoard.prototype.create = function(width, height, elevation, posx, p
 	this.add(xz);
 	this.add(zx);
 
-	this.rotation.z =  90 * Math.PI/180;
-
-	
-
-			
+	this.rotation.z =  90 * Math.PI/180;		
 };
 
 
@@ -120,12 +108,6 @@ CITY.LampostBillBoard.prototype = new THREE.Object3D();
 
 CITY.LampostBillBoard.prototype.create = function(width, height, elevation, posx, posz, map){
 
-	//Select the texture from the list of tree textures, random?
-
-	//TO DO!!
-
-//	CITY.ElementBillBoard.prototype.create.call(width, height, elevation, posx, posz, map);
-
 	var xz = new CITY.BillBoard();
 
 	xz.create(width, 0, height, 0, 0, 0, map);
@@ -143,12 +125,8 @@ CITY.LampostBillBoard.prototype.create = function(width, height, elevation, posx
 	this.add(zx);
 
 	this.rotation.z =  90 * Math.PI/180;
-
-	
-
-			
+		
 };
-
 
 
 CITY.CloudBillboard = function (  ){
@@ -177,8 +155,5 @@ CITY.CloudBillboard.prototype.create = function(width, depth, height, posx, posz
 	this.add(zx);
 
 	this.rotation.z =  90 * Math.PI/180;
-
-	
-
 			
 };

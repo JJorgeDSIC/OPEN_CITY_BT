@@ -134,13 +134,7 @@ CITY.CollisionDetector.prototype.detect = function(switchCamera){
 		var collisions = this.caster.intersectObjects(this.obstacles, true);
 
 		if (collisions.length > 0 && collisions[0].distance <= this.distances[i]) {
-			
-
-		
-			//if(i!=4){
-				//if(CITY.DEBUG_COLLISIONS)console.log("Collision on direction %s \n",i);
-				//if(CITY.DEBUG_COLLISIONS)console.log( directions[i]);
-			//}
+	
 			detectedCollisions[i] = true;
 		}
 	}

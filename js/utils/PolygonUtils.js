@@ -1321,20 +1321,6 @@ static._groupFromSideWalkBufferGeometryList = function(bufferGeometryList, wallM
               collidableMesh.push(buildingMesh);
               group.add(buildingMesh);
 
-             
-
-           
-
-
-
-
-
-
-
-
-
-
-
           //No  elevation
           }else{
 
@@ -1364,27 +1350,9 @@ static._groupFromSideWalkBufferGeometryList = function(bufferGeometryList, wallM
             buildingMesh.position.y += 0.2;
           }
 
-
-
-
-
-
-
-
-
         }
 
-
-
-
-
      }
-
-
-
-
-
-
 
       if(!park){
         sideWalkMesh = CITY.PolygonUtils.extrudePolygon(
@@ -1397,9 +1365,6 @@ static._groupFromSideWalkBufferGeometryList = function(bufferGeometryList, wallM
         );
         group.add(sideWalkMesh);
       }
-
-
-
 
   }
 	return group;
@@ -1512,16 +1477,12 @@ static._extrudePolyDefault = function(polyDefault, height, groundfloor, posY){
         //static.sortPointsCounterClockwise(vertexs);
         //console.log(polySimple.getArea());
         var isHole = polyDefault.isHole();
-        //REVISAR PARA QUITAR
         var area = polyDefault.getArea();
 
         if(!isHole || polyDefault.getArea() < 0){//Clockwise
           vertexs.reverse();
         }
 
-        //ARREGLAR LA TEXTURACION
-        //if(CITY.PolygonUtils.DEBUG)
-        //console.log(vertexs);
         var geometry = new THREE.BufferGeometry();
         var numOfVertexs =  vertexs.length;
 
@@ -1532,11 +1493,6 @@ static._extrudePolyDefault = function(polyDefault, height, groundfloor, posY){
          vertexs.push(new Point( vertexs[0].x, vertexs[0].y ));
           numOfVertexs++;
         }
-
-        //console.log(vertexs);
-
-        //if(CITY.PolygonUtils.DEBUG)
-        //console.log(vertexs);
 
         var triangles = 2 * (numOfVertexs - 1);
 
@@ -2113,9 +2069,6 @@ CITY.CustomPolygon = function ( points ) {
       }
 
     }
-
-  //gpcas.geometry.PolyDefault.prototype.computeBoundingBox2D();
-  //gpcas.geometry.PolyDefault.prototype.computeCentroid();
 
 };
 

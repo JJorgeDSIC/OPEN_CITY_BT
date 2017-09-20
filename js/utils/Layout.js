@@ -29,23 +29,13 @@ var context;
 var canvas;
 
 
-
-
-
 function drawLayout(polygonSet, height, scene){
 
 	var numPolys = polygonSet.getNumInnerPoly();
 
-
-
 	buildingGroup = CITY.PolygonUtils.extrudePolygon(polygonSet, height, new THREE.MeshLambertMaterial({wireframe: true}),  new THREE.MeshLambertMaterial({wireframe: true}));
 
 	scene.add(buildingGroup);
-	
-	
-
-
-
 
 };
 
@@ -56,27 +46,12 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
 
 	var time = Date.now();
 
-	//Review
 	var paddingX = 10;
 	var paddingZ = 10;
 
-	//var sizeX = sizeXParam;
-	//var sizeZ = sizeZParam;
-	
-	//sizeX = sizeX + maxSizeXAxis;
-	//sizeZ = sizeZ + maxSizeYAxis;
-
 	var biggerSize = sizeX - sizeZ > 0? sizeX * 2: sizeZ * 2;
 
-	//alert(biggerSize);
-
-	//var avenueAnchor = 10;
-
-	
-
 	var time = Date.now();
-
-	
 
 	var city = [
 		[paddingX,			paddingZ],	
@@ -91,11 +66,6 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
 		drawPoly(cityPoly,"green",0,0);
 		alert("Initial state");
 	}
-/*
-	var mean = (maxSizeXAxis + minSizeXAxis)/2;
-
-	var stdev = 50;
-*/
 
 	var mean = minSizeXAxis;
 
@@ -109,7 +79,6 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
 	var lowerY = bounds.y - 10;
 
 	var upperY = bounds.y + bounds.h + 10;
-
 
 	var roll; 
 
@@ -140,16 +109,6 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
 		var rollPoly = createPoly(rollCut);
 
 		polygonCuts.addPoly(rollPoly);
-
-		
-		//alert("cut => " + roll  + " size of apple: " + (roll - bounds.x - midStreetAnchor) + "Cut: " + cut + "remaining: " + remaining);
-
-		//remainig -= (roll + midStreetAnchor);
-
-		//lowerRoll = roll + midStreetAnchor;
-
-		//upperRoll = lowerY  + maxSizeXAxis - midStreetAnchor;
-
 
 	}
 
@@ -215,14 +174,6 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
 		}
 
 		
-		//alert("cut => " + roll  + " size of apple: " + (roll - bounds.x - midStreetAnchor) + "Cut: " + cut + "remaining: " + remaining);
-
-		//remainig -= (roll + midStreetAnchor);
-
-		//lowerRoll = roll + midStreetAnchor;
-
-		//upperRoll = lowerY  + maxSizeXAxis - midStreetAnchor;
-
 
 	}
 
@@ -243,24 +194,6 @@ var drawRoadMap = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues,
  	
 
  	if(remaining < midStreetAnchor) polygonCuts.m_List._array.splice(polygonCuts.getNumInnerPoly() - 1, 1);
-
- 	//PrimaryroadMap
-	
-/*	
-	for(var i = 0; i < resultPolygonList.length; i+=1){
-			var polycut = resultPolygonList[i];
-			roadMap.addPoly(polycut);
-			if(stepByStep){
-					drawPoly(cut,"black",0,0);
-					drawPoly(polycut,"green",0,0);
-					alert("cut - avenue");
-			}
-			
-	}
-*/
-
-
-
 
 	var avenue = [
 		[0,				-biggerSize],	
@@ -330,15 +263,7 @@ function rnd(mean, stdev) {
 					
 var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor, numAvenues, minSizeXAxis, maxSizeXAxis, minSizeYAxis, maxSizeYAxis, purgeArea, stepByStep, stepByStepDepthMode, radial, initialPoly, posx, posy, finalLayout, type){
 
-	//clearScreen();
-	//var sizeX = sizeXParam;
-	//var sizeZ = sizeZParam;
-	//console.log("draw2");
-	//console.log(initialPoly);
 	var bounds = initialPoly.getBounds();
-
-	//Puedo modificar aquí para determinar ya el tipo....
-	
 
 	var sizeX = bounds.w;
 	var sizeZ = bounds.h;
@@ -346,10 +271,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 	var Zpos = bounds.y;
 
 	var biggerSize = sizeX - sizeZ > 0? sizeX * 2: sizeZ * 2;
-
-	//alert(biggerSize);
-
-	//var avenueAnchor = 10;
 
 	var avenue = [
 		[0,				-biggerSize * 10],	
@@ -359,14 +280,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 	];
 
 	var avenuePolygon = createPoly(avenue);
-
-	//To configure operations
-
-	//PolygonUtils.rotatePolygon(avenuePolygon, 30);
-
-	//PolygonUtils.scalePolygon(avenuePolygon, 2,2);
-
-	//PolygonUtils.translatePolygon(avenuePolygon, bounds.x + sizeX/2,0);
 
 	var time = Date.now();
 
@@ -382,13 +295,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 		drawPoly(cityPoly,"green",0,0);
 		alert("Initial state");
 	}
-
-	//var streetAnchor = 10;
-
-	//Purge by Area? to review
-	//var threshold = 20;
-
-	//drawPoly(cityPoly,"black",0,0);
 
 	var minSize = minSizeXAxis;
 
@@ -477,11 +383,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 		
 
 		var vertexs = getPolygonVertices(poly);
-		//console.log(vertexs);
-		//gpcas.util.ArrayHelper.sortPointsClockwise(vertexs);
-		//console.log(vertexs);
-
-		//console.log("Restante %s %s %s", lowerX, upperX, upperX - lowerX);
 
 		if(upperX - lowerX <= 1){
 			stored.push(poly);
@@ -592,9 +493,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 
 		var midW = bounds.h/2;
 
-		
-		
-
 		if(midW > minSize + streetAnchor && midW <= maxSize){
 
 			var lowY = bounds.y + midW;
@@ -631,11 +529,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 		
 
 		var vertexs = getPolygonVertices(poly);
-
-		//console.log(vertexs);
-		//It is necessary?
-		//gpcas.util.ArrayHelper.sortPointsClockwise(vertexs);
-		//console.log(vertexs);
 
 		if(upperY - lowerY <= 1){
 
@@ -703,22 +596,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 			
 	}
 
-	/*
-	//REVISAR ESTO
-	//Avenue phase
-	//var avenueAnchor = 10;
-
-	var avenue = [
-		[0,				-biggerSize],	
-		[avenueAnchor,	-biggerSize],	
-		[avenueAnchor,	biggerSize],	
-		[0, 			biggerSize]	
-	];
-
-	var avenuePolygon = createPoly(avenue);
-	*/
-	//Example of random transformations
-	//var diff = roadMap;
 	var angle = 15;
 	var grad = 360/angle;
 
@@ -729,13 +606,9 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 		
 		
 		if(radial){
-			//PolygonUtils.translatePolygon(avenuePolygon,THREE.Math.randInt(Xpos, Xpos + sizeX),0);
 			PolygonUtils.translatePolygon(avenuePolygon,THREE.Math.randInt(Xpos, Xpos + sizeX),Zpos + sizeZ/2);
 			PolygonUtils.rotatePolygon(avenuePolygon,THREE.Math.randInt(0,360), new Point(Xpos +sizeX/2,Zpos +sizeZ/2));
 		}else{
-			//console.log("value %s ", THREE.Math.randInt(-sizeX,sizeX));
-			//PolygonUtils.translatePolygon(avenuePolygon,THREE.Math.randInt(Xpos + -sizeX/2, Xpos + sizeX/2),0);
-			//PolygonUtils.translatePolygon(avenuePolygon,THREE.Math.randInt(Xpos, Xpos + sizeX),0);
 			PolygonUtils.translatePolygon(avenuePolygon,THREE.Math.randInt(Xpos, Xpos + sizeX),Zpos + sizeZ/2);
 			
 		}
@@ -743,8 +616,6 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 
 		angleIterations += angle;
 	}
-
-	//roadMap = new gpcas.geometry.PolyDefault();
 
 	var misSizeX = maxSizeXAxis/2;
 	var misSizeZ = maxSizeYAxis/2;
@@ -771,15 +642,9 @@ var drawRoadMap2InitialPoly = function(sizeX, sizeZ, streetAnchor, avenueAnchor,
 			//alert("POLY MALO");
 	}
 
-
-
-
 	return finalLayout;
 
 }
-
-					
-
 
 var randomIntFromInterval =function(min,max){
     return Math.floor(Math.random()*(max-min+1)+min);
