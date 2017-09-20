@@ -21,7 +21,7 @@ window.onload = function() {
 
 	var camera, trackBallCamera, controls;
 
-	alert("Set your params or left them by default and click on 'create'");
+	alert("Set your parameters or leave them by default and click on 'create'");
 	alert("Push Q to start, A,S,D,W and SHIFT provide movement, pushing C changes to one camera to the other and O shows the whole map")
 
 
