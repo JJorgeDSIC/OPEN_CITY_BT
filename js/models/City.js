@@ -8,8 +8,6 @@ CITY.OpenCity = function(parameters){
 
 	THREE.Object3D.call(this);
 
-
-
 	var scene = parameters.scene;
 
 	if(parameters.polygon !== undefined){
@@ -280,7 +278,7 @@ CITY.OpenCity.prototype.setUpCollisions = function(collidableMesh){
 
 				if(CITY.DEBUG_COLLISIONS)console.log("post %s ", CITY.switchCamera);
 				break;
-			case 79: //o
+			case 77: //M
 				//Toggle cameras
 				if(CITY.DEBUG_COLLISIONS)console.log("Toggle camera - ort");
 
@@ -398,6 +396,8 @@ CITY.OpenCity.prototype.update = function(delta, vv){
 			//console.log(sky);
 			//return this.flyCamera;
 			cam = this.flyCamera;
+
+			this.flyControls.freeze = false;
 
 		}else{
 

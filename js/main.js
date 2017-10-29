@@ -21,8 +21,8 @@ window.onload = function() {
 
 	var camera, trackBallCamera, controls;
 
-	alert("Set your parameters or use them with values by default and click on 'create'");
-	alert("Push Q to start, A,S,D,W and SHIFT to move, pushing C changes from one camera to the other and O shows the whole map")
+	alert("(BETTER WITH GPU!) Set your parameters or use them with values by default and click on 'CREATE' on the right panel");
+	alert("A,S,D,W and SHIFT to move, C changes from one camera to the other, N switch between day/night, and M shows the whole map")
 
 
 
@@ -43,8 +43,8 @@ var FizzyText = function() {
 
 var manipulation = function(){
 
-	this.width = 1000;
-	this.depth = 1000;
+	this.width = 2000;
+	this.depth = 2000;
 	this.streetAnchorField = 10;
 	this.avenueAnchorField  = 15;
 	this.numAvenues = 2;
@@ -150,9 +150,9 @@ var manipulation = function(){
 		//dirLight.position.set( -100, 455, -50 );
 		//dirLight.position.set( 200, 105, 100 );
 
-		var pointLightHelper2 = new THREE.PointLightHelper( dirLight, 10);
+		//var pointLightHelper2 = new THREE.PointLightHelper( dirLight, 10);
 
-		scene.add( pointLightHelper2 );
+		//scene.add( pointLightHelper2 );
 
 
 		dirLight.castShadow = true;
@@ -211,7 +211,7 @@ var manipulation = function(){
 		scene.add(city);
 
 
-		if(false){
+		/*if(debug){
 
 			var size = 4000;
 			var step = 10;
@@ -224,7 +224,7 @@ var manipulation = function(){
 
 			scene.add(new THREE.AxisHelper(50));
 
-		}
+		}*/
 
 		//prepareStats();
 		window.addEventListener('resize', onWindowResize, false);

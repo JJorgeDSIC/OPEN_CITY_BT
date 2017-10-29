@@ -38,14 +38,14 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 	this.lat = 0;
 	this.lon = 0;
-	this.phi = 0;
+	this.phi = 90;
 	this.theta = 0;
 
 	this.moveForward = false;
 	this.moveBackward = false;
 	this.moveLeft = false;
 	this.moveRight = false;
-	this.freeze = true;
+	this.freeze = false;
 
 	this.mouseDragOn = false;
 
