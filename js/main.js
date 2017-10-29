@@ -21,7 +21,7 @@ window.onload = function() {
 
 	var camera, trackBallCamera, controls;
 
-	alert("(BETTER WITH GPU!) Set your parameters or use them with values by default and click on 'CREATE' on the right panel");
+	alert("(RECOMMENDED GPU!) Set your parameters or use them with values by default and click on 'CREATE' on the right panel");
 	alert("A,S,D,W and SHIFT to move, C changes from one camera to the other, N switch between day/night, and M shows the whole map")
 
 
